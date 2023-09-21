@@ -1,0 +1,89 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AUITemplate"
+             x:Class="AUITemplate.App"
+             RequestedThemeVariant="Dark"
+			 xmlns:DefaultMenuView="clr-namespace:AUITemplate.Views.Menus"
+			 xmlns:DefaultMenuViewModel="clr-namespace:AUITemplate.ViewModels.Menus"
+			 xmlns:DefaultMainsView="clr-namespace:AUITemplate.Views.Defaults"
+			 xmlns:DefaultMainsViewModel="clr-namespace:AUITemplate.ViewModels.Defaults">
+	
+	<Application.Styles>
+		<!-- Title bar buttons -->
+		<Style Selector="Button.TitleBarButton">
+			<Setter Property="Opacity" Value="0.7"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Button.TitleBarButton:pointerover">
+			<Setter Property="Opacity" Value="1"/>
+		</Style>
+		<Style Selector="Button.TitleBarButton:pointerover /template/ ContentPresenter">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Button.TitleBarButton:pressed /template/ ContentPresenter">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<!-- Side Menu -->
+		<Style Selector="Border.SideMenuMove">
+			<Setter Property="Width" Value="20"/>
+		</Style>
+		<Style Selector="Border.SideMenuMove:pointerover">
+			<Setter Property="Width" Value="130"/>
+		</Style>
+		<!-- Side Menu Items -->
+		<Style Selector="Button.SideMenuButton">
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="FontSize" Value="25"/>
+			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="Width" Value="140"/>
+			<Setter Property="Margin" Value="0,5,0,0"/>
+		</Style>
+		<!-- Apps -->
+		<Style Selector="Button.AppButton">
+			<Setter Property="Opacity" Value="0.7"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="CornerRadius" Value="10"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="HorizontalAlignment" Value="Center"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Margin" Value="5"/>
+			<Setter Property="FontFamily" Value="Georgia"/>
+			<Setter Property="FontSize" Value="25"/>
+		</Style>
+		<Style Selector="Button.AppButton:pointerover">
+			<Setter Property="Opacity" Value="1"/>
+		</Style>
+		<Style Selector="Button.AppButton:pointerover /template/ ContentPresenter">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Button.AppButton:pressed /template/ ContentPresenter">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+	</Application.Styles>
+	
+
+	
+	
+	
+    <Application.DataTemplates>
+		<!-- Pair ViewModels with Views -->
+		<DataTemplate DataType="{x:Type DefaultMenuViewModel:DefaultSideMenuViewModel}">
+			<DefaultMenuView:DefaultSideMenuView/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type DefaultMainsViewModel:MainViewModel}">
+			<DefaultMainsView:MainView/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type DefaultMainsViewModel:HomeViewModel}">
+			<DefaultMainsView:HomeView/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type DefaultMainsViewModel:AppsViewModel}">
+			<DefaultMainsView:AppsView/>
+		</DataTemplate>
+		</Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+</Application>

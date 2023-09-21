@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AUITemplate.Views.Defaults.HomeView"
+			 xmlns:vm="using:AUITemplate.ViewModels.Defaults"
+			 x:DataType="vm:HomeViewModel">
+
+	<Border CornerRadius="20">
+		<Border.Background>
+			<LinearGradientBrush>
+				<GradientStop Color="#68a87f" Offset="0"/>
+				<GradientStop Color="#2478bd" Offset="0.5"/>
+				<GradientStop Color="#77abd4" Offset="1"/>
+			</LinearGradientBrush>
+		</Border.Background>
+		<Grid Margin="5">
+			<TextBlock Text="Home" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+		</Grid>
+	</Border>
+</UserControl>
